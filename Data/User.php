@@ -13,7 +13,7 @@ class User
 			VALUES ('$firstname', '$lastname', '$emailaddress', '$password', '$reference',
 			'$experience', '$securitykey1', '$securitykey2', $active, '$createdon')";
 	
-			\MySQLProvider::ExecuretSQL($sql);
+			\MySQLProvider::ExecuteSQL($sql);
 			
 		} catch ( PDOException $e ) {
 			echo $sql . "<br>" . $e->getMessage ();

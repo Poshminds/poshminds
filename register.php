@@ -2,7 +2,7 @@
  use Poshminds\Data\User; 
  use Poshminds\Common\Helper;
  require_once ('Common/common.php');
- require_once ('Data\User.php');
+ require_once ('Data/User.php');
  require_once('recaptchalib.php');
  
  // Get a key from https://www.google.com/recaptcha/admin/create
@@ -14,11 +14,11 @@
 <html>
 <head>
 <title>Poshminds - Registration</title>
- <?php include '/Includes/jscssincludes.php';?>
+ <?php include 'Includes/jscssincludes.php';?>
 
 </head>
 <body>
- <?php include '/Includes/Header.php';?>
+ <?php include 'Includes/Header.php';?>
  
  <?php
 	$firstname = $lastname= $emailaddress =$password=$confirmpassword = $mobile = $referenceoptions = $experienceoptions = $secretquestion1 = $secretquestion2 = $errorMessage ="";
@@ -44,7 +44,7 @@
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="firstname"
 								name="firstname" placeholder="First Name"
-								value="<?php echo $firstname;?>">
+								value="<?php echo $firstname;?>"  maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -52,7 +52,7 @@
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="lastname"
 								name="lastname" placeholder="Last Name"
-								value="<?php echo $lastname;?>">
+								value="<?php echo $lastname;?>"  maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -61,7 +61,7 @@
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="emailAddress"
 								name="emailAddress" placeholder="Email"
-								value="<?php echo $emailaddress;?>">
+								value="<?php echo $emailaddress;?>" maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -69,7 +69,7 @@
 						<div class="col-sm-6">
 							<input type="password" class="form-control" id="password"
 								name="password" placeholder="Password"
-								value="<?php echo $password;?>">
+								value="<?php echo $password;?>" maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -78,7 +78,7 @@
 						<div class="col-sm-6">
 							<input type="password" class="form-control" id="confirmpassword"
 								name="confirmpassword" placeholder="Password"
-								value="<?php echo $confirmpassword;?>">
+								value="<?php echo $confirmpassword;?>" maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -86,7 +86,7 @@
 							shared with anyone)</label>
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="mobile" name="mobile"
-								placeholder="mobile" value="<?php echo $mobile;?>">
+								placeholder="mobile" value="<?php echo $mobile;?>"  maxlength="15">
 						</div>
 					</div>
 					<div class="form-group">
@@ -152,7 +152,7 @@
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="secretquestion1"
 								name="secretquestion1" placeholder="ex: Tirupathi"
-								value="<?php echo $secretquestion1;?>">
+								value="<?php echo $secretquestion1;?>"  maxlength="100">
 						</div>
 					</div>
 
@@ -164,7 +164,7 @@
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="secretquestion2"
 								name="secretquestion2" placeholder="ex: posh"
-								value="<?php echo $secretquestion2;?>">
+								value="<?php echo $secretquestion2;?>" maxlength="100">
 						</div>
 					</div>
 
@@ -192,7 +192,7 @@
 				<p class="text-center ">Thank you very much for your business. 
 					You have been successfully registered with
 					Poshminds.com. Please activate yourself by clicking activation link
-					sent in the email (check the junk mails for activation link".</p>
+					sent in the email (check the junk mails also for activation link)".</p>
 			</div>
 		</div>
 		<div class="row">
@@ -205,6 +205,8 @@
 		<?php }?>
 	</div>
 
+
+	<?php include 'Includes/footer.php';?>
 </body>
 </html>
 

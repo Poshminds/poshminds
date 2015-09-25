@@ -6,9 +6,15 @@ class MySQLProvider
 	private static function  GetConnection()
 	{
 		
-		$servername = "localhost";
-		$username = "root";
-		$dbpassword = "";
+		$servername = "mysql-poshminds.poshminds.com";
+		$username = "poshminds123";
+		$dbpassword = "poshminds123";
+		
+//		$servername = "localhost";
+//		$username = "root";
+//		$dbpassword = "";
+		
+		
 		$dbname = "poshminds";
 		
 		$conn = new PDO ( "mysql:host=$servername;dbname=$dbname", $username, $dbpassword );
@@ -16,7 +22,7 @@ class MySQLProvider
 		return $conn;
 	}
 	
-	public static function ExecureSQL ($sql)
+	public static function ExecuteSQL ($sql)
 	{
 		try {
 			$conn = self::GetConnection();

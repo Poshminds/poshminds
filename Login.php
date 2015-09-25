@@ -7,7 +7,7 @@ use Poshminds\Data\User;
 use Poshminds\Common\Helper;
 
 require_once ('Common/common.php');
-require_once ('Data\User.php');
+require_once ('Data/User.php');
 
 session_start();
 session_destroy();
@@ -19,11 +19,11 @@ session_start();
 <html>
 <head>
 <title>Poshminds - Registration</title>
- <?php include '/Includes/jscssincludes.php';?>
+ <?php include 'Includes/jscssincludes.php';?>
 
 </head>
 <body>
- <?php include '/Includes/Header.php';?>
+ <?php include 'Includes/Header.php';?>
  <?php
 $emailaddress = $password = $errorMessage = "";
 $processflag = ProcessRequest ();
@@ -50,7 +50,7 @@ $processflag = ProcessRequest ();
 						<div class="col-sm-6">
 							<input type="text" class="form-control" id="emailAddress"
 								name="emailAddress" placeholder="Email"
-								value="<?php echo $emailaddress;?>">
+								value="<?php echo $emailaddress;?>" maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -58,7 +58,7 @@ $processflag = ProcessRequest ();
 						<div class="col-sm-6">
 							<input type="password" class="form-control" id="password"
 								name="password" placeholder="Password"
-								value="<?php echo $password;?>">
+								value="<?php echo $password;?>" maxlength="100">
 						</div>
 					</div>
 					<div class="form-group">
@@ -76,6 +76,8 @@ $processflag = ProcessRequest ();
 		</div>
 
 	</div>
+	
+	<?php include 'Includes/footer.php';?>
 </body>
 </html>
 
